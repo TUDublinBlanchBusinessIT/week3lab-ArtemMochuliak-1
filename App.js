@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import Logo from './components/Logo';
 
 export default function App() {
@@ -7,6 +7,10 @@ export default function App() {
   const [fname, setFname] = useState("Joe");
   const [lname, setLname] = useState("Bloggs");
   const [dob, setDob] = useState("22 August 1990");
+
+  function buttonClicked() {
+  alert(`Hello ${fname} ${lname}. You were born on ${dob}.`);
+}
 
   return (
     <View style={styles.container}>
@@ -45,6 +49,9 @@ export default function App() {
       <Text style={styles.outputText}>
         Hello {fname} {lname}. You were born on {dob}.
       </Text>
+
+      <Button title="SUBMIT" onPress={buttonClicked} />
+      
     </View>
   );
 }
